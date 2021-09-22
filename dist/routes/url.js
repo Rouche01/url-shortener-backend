@@ -83,7 +83,7 @@ router.post("/url/shorten", function (req, res) { return __awaiter(void 0, void 
                 return [4 /*yield*/, newUrl.save()];
             case 4:
                 _a.sent();
-                res.status(200).send(newUrl);
+                res.status(201).send(newUrl);
                 return [3 /*break*/, 6];
             case 5: throw new custom_error_1.CustomError("long url is not a valid url", 400);
             case 6: return [2 /*return*/];
