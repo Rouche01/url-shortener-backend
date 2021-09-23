@@ -19,10 +19,6 @@ app.use(redirectRouter);
 
 const PORT = process.env.PORT || 4000;
 
-app.get("/", (req: Request, res: Response) => {
-  res.send("Hello World");
-});
-
 app.use(errorHandler);
 
 const startup = async () => {
