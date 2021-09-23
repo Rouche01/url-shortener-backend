@@ -67,16 +67,13 @@ var error_handler_1 = require("./middlewares/error-handler");
 var routes_1 = require("./routes");
 var cors_1 = __importDefault(require("cors"));
 dotenv_1.default.config();
-var app = express_1.default();
-app.use(cors_1.default());
-app.use(express_1.json());
-app.use(express_1.urlencoded({ extended: true }));
+var app = (0, express_1.default)();
+app.use((0, cors_1.default)());
+app.use((0, express_1.json)());
+app.use((0, express_1.urlencoded)({ extended: true }));
 app.use("/api", url_1.urlShortenRoute);
 app.use(routes_1.redirectRouter);
 var PORT = process.env.PORT || 4000;
-app.get("/", function (req, res) {
-    res.send("Hello World");
-});
 app.use(error_handler_1.errorHandler);
 var startup = function () { return __awaiter(void 0, void 0, void 0, function () {
     var err_1;

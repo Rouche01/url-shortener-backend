@@ -56,10 +56,10 @@ router.post("/url/shorten", function (req, res) { return __awaiter(void 0, void 
             case 0:
                 longUrl = req.body.longUrl;
                 baseUrl = process.env.BASE_URL;
-                return [4 /*yield*/, validate_url_1.validateUrl(baseUrl)];
+                return [4 /*yield*/, (0, validate_url_1.validateUrl)(baseUrl)];
             case 1:
                 isValidBase = _a.sent();
-                return [4 /*yield*/, validate_url_1.validateUrl(longUrl)];
+                return [4 /*yield*/, (0, validate_url_1.validateUrl)(longUrl)];
             case 2:
                 isValidLongUrl = _a.sent();
                 if (!isValidBase) {
@@ -72,7 +72,7 @@ router.post("/url/shorten", function (req, res) { return __awaiter(void 0, void 
                 if (url) {
                     return [2 /*return*/, res.status(200).send(url)];
                 }
-                shortCode = nanoid_1.nanoid(7);
+                shortCode = (0, nanoid_1.nanoid)(7);
                 shortUrl = baseUrl + "/" + shortCode;
                 newUrl = Url_1.Url.build({
                     code: shortCode,
