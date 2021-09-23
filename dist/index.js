@@ -72,7 +72,7 @@ app.use((0, cors_1.default)());
 app.use((0, express_1.json)());
 app.use((0, express_1.urlencoded)({ extended: true }));
 app.use("/api", url_1.urlShortenRoute);
-app.use(routes_1.redirectRouter);
+app.use("/api", routes_1.redirectRouter);
 var PORT = process.env.PORT || 4000;
 app.use(error_handler_1.errorHandler);
 var startup = function () { return __awaiter(void 0, void 0, void 0, function () {

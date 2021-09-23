@@ -15,7 +15,7 @@ app.use(json());
 app.use(urlencoded({ extended: true }));
 
 app.use("/api", urlShortenRoute);
-app.use(redirectRouter);
+app.use("/api", redirectRouter);
 
 const PORT = process.env.PORT || 4000;
 
